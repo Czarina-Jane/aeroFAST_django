@@ -1,64 +1,71 @@
 {% extends 'amf/base_amf.html' %}
 {% block content %}    
+
     <div class="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">
-        <label for="SYN" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">SYNOPTIC SITUATION</label>
-        <textarea id="SYN" rows="2" class="fbph block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="EASTERLIES AFFECTING THE COUNTRY PD MOD PRES GRAD ASSW MOD TO STRNG NLY SFC WNDFLOW PREVAILING OVR NRN AND WRN SECTIONS OF NRN LUZON BECMG LGT TO MOD ELY TO SELY OVR THE REST OF NRN LUZON WHILE ELY TO NLY OVR THE REST OF THE COUNTRY PD
-        "></textarea>
-        
-        <label for="PHILAWYS" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">PHIL AWYS</label>
-        <textarea id="PHILAWYS" rows="3" class="fbph block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="FEW TO SCT CU SC BASES 360M/1200FT TO 450M/1500FT TOPS 570M/1900FT TO 780M/2600FT ASSW FEW TO SCT TCU/CB BASES FRM 270M/900FT TO 330M/1100FT TOPS 6900M/23000FT TO 14700M/49000FT SCT TO BKN AS/AC BASES 1980M/6600FT TO 2460M/8200FT TOPS 4500M/15000FT TO 5400M/18000FT SCT TO BKN CI/CS 9600M/32000FT AND ABV ALL HTS FRM MSL PD WX PARTLY CLDY TO CLDY W/ ISOL SHRA OR TS OVR METRO MANILA AND THE REST OF THE COUNTRY PD
+      <!-- nag add ako ng <form> pra matransfer mo yung data ng form na ito to another form  -->
+        <form method="post" action="{% url 'fbph' %}">
+            <!-- mahalaga itong csrf token lagi mo lagyan lalo kapag may mga field ka  -->
+            {% csrf_token %}
 
-        "></textarea>
-        
+            <!-- pinalitan ko yung id="SYN" to name="SYN" pra makuha niya yung value ng form mo -->
+            <label for="SYN" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">SYNOPTIC SITUATION</label>
+            <textarea name="SYN" rows="2" class="fbph block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="EASTERLIES AFFECTING THE COUNTRY PD MOD PRES GRAD ASSW MOD TO STRNG NLY SFC WNDFLOW PREVAILING OVR NRN AND WRN SECTIONS OF NRN LUZON BECMG LGT TO MOD ELY TO SELY OVR THE REST OF NRN LUZON WHILE ELY TO NLY OVR THE REST OF THE COUNTRY PD"></textarea>
+            
+            <label for="PHILAWYS" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">PHIL AWYS</label>
+            <textarea name="PHILAWYS" rows="3" class="fbph block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="FEW TO SCT CU SC BASES 360M/1200FT TO 450M/1500FT TOPS 570M/1900FT TO 780M/2600FT ASSW FEW TO SCT TCU/CB BASES FRM 270M/900FT TO 330M/1100FT TOPS 6900M/23000FT TO 14700M/49000FT SCT TO BKN AS/AC BASES 1980M/6600FT TO 2460M/8200FT TOPS 4500M/15000FT TO 5400M/18000FT SCT TO BKN CI/CS 9600M/32000FT AND ABV ALL HTS FRM MSL PD WX PARTLY CLDY TO CLDY W/ ISOL SHRA OR TS OVR METRO MANILA AND THE REST OF THE COUNTRY PD"></textarea>
+            
 
-    <div class="relative overflow-x-auto">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
-                    <th scope="col" class="px-6 py-3">
-                        WINDS ALOFT : (All speed in KT/KMH)
-                    </th>
+            <div class="relative overflow-x-auto">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                WINDS ALOFT : (All speed in KT/KMH)
+                            </th>
 
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                    <th scope="row"  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        3000M/10000FT:	
-                    </th>
-                    <td style="width: 1300px;" class= "px-6 py-4">
-                        <textarea id="3000M/10000FT:" rows="2" class="fbph block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="VRB10KT/20KMH OVR XTRM NRN LUZON AND NRN LUZON 070DEG15KT/30KMH OVR REST OF LUZON 080DEG20KT/40KMH OVR PALAWAN 090DEG20KT/40KMH OVR WRN VISAYAS 090DEG15KT/30KMH OVR REST OF VISAYAS 090DEG10KT/20KMH OVR MINDANAO"></textarea>
-                    </td>
-                </tr>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        5400M/18000FT:	
-                    </th>
-                    <td style="width: 1300px;" class= "px-6 py-4">
-                        <textarea id="5400M/18000FT:" rows="2" class="fbph block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="320DEG25KT/50KMH OVR XTRM NRN LUZON 340DEG15KT/30KMH OVR NRN LUZON 030DEG15KT/30KMH OVR CNTRL LUZON 030DEG20KT/40KMH OVR REST OF LUZON 090DEG25KT/50KMH OVR PALAWAN 050DEG20KT/40KMH OVR VISAYAS 070DEG25KT/50KMH OVR MINDANAO"></textarea>
-                    </td>
-                </tr>
-                <tr class="bg-white dark:bg-gray-800">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        9000M/30000FT:	
-                    </th>
-                    <td style="width: 1300px;" class= "px-6 py-4">
-                        <textarea id="9000M/30000FT" rows="2" class="fbph block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="270DEG40KT/80KMH OVR XTRM NRN LUZON 270DEG20KT/40KMH OVR NRN LUZON VRB10KT/20KMH OVR ERN VISAYAS AND REST OF LUZON 090DEG15KT/30KMH OVR PALAWAN AND REST OF VISAYAS 090DEG20KT/40KMH OVR MINDANAO"></textarea>
-                    </td>
-                </tr>
-                <tr class="bg-white dark:bg-gray-800">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        11700M/39000FT:	
-                    </th>
-                    <td style="width: 1300px;" class= "px-6 py-4">
-                        <textarea id="11700M/39000FT" rows="2" class="fbph block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="270DEG40KT/80KMH OVR XTRM NRN LUZON 270DEG20KT/40KMH OVR NRN LUZON VRB10KT/20KMH OVR ERN VISAYAS AND REST OF LUZON 090DEG15KT/30KMH OVR PALAWAN AND REST OF VISAYAS 090DEG20KT/40KMH OVR MINDANAO"></textarea>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row"  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                3000M/10000FT:	
+                            </th>
+                            <td style="width: 1300px;" class= "px-6 py-4">
+                                <textarea id="3000M/10000FT:" rows="2" class="fbph block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="VRB10KT/20KMH OVR XTRM NRN LUZON AND NRN LUZON 070DEG15KT/30KMH OVR REST OF LUZON 080DEG20KT/40KMH OVR PALAWAN 090DEG20KT/40KMH OVR WRN VISAYAS 090DEG15KT/30KMH OVR REST OF VISAYAS 090DEG10KT/20KMH OVR MINDANAO"></textarea>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                5400M/18000FT:	
+                            </th>
+                            <td style="width: 1300px;" class= "px-6 py-4">
+                                <textarea id="5400M/18000FT:" rows="2" class="fbph block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="320DEG25KT/50KMH OVR XTRM NRN LUZON 340DEG15KT/30KMH OVR NRN LUZON 030DEG15KT/30KMH OVR CNTRL LUZON 030DEG20KT/40KMH OVR REST OF LUZON 090DEG25KT/50KMH OVR PALAWAN 050DEG20KT/40KMH OVR VISAYAS 070DEG25KT/50KMH OVR MINDANAO"></textarea>
+                            </td>
+                        </tr>
+                        <tr class="bg-white dark:bg-gray-800">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                9000M/30000FT:	
+                            </th>
+                            <td style="width: 1300px;" class= "px-6 py-4">
+                                <textarea id="9000M/30000FT" rows="2" class="fbph block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="270DEG40KT/80KMH OVR XTRM NRN LUZON 270DEG20KT/40KMH OVR NRN LUZON VRB10KT/20KMH OVR ERN VISAYAS AND REST OF LUZON 090DEG15KT/30KMH OVR PALAWAN AND REST OF VISAYAS 090DEG20KT/40KMH OVR MINDANAO"></textarea>
+                            </td>
+                        </tr>
+                        <tr class="bg-white dark:bg-gray-800">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                11700M/39000FT:	
+                            </th>
+                            <td style="width: 1300px;" class= "px-6 py-4">
+                                <textarea id="11700M/39000FT" rows="2" class="fbph block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="270DEG40KT/80KMH OVR XTRM NRN LUZON 270DEG20KT/40KMH OVR NRN LUZON VRB10KT/20KMH OVR ERN VISAYAS AND REST OF LUZON 090DEG15KT/30KMH OVR PALAWAN AND REST OF VISAYAS 090DEG20KT/40KMH OVR MINDANAO"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
    
-        <label for="CIG " class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CIG </label>
-        <textarea id="CIG " rows="2" class="fbph block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="CIG 2760M/9200FT OCNLY LWRG TO 2370M/7900FT OR LESS IN ISOL SHRA AND TS LWRG TO 2010M/6700FT OR LESS IN LGT RA AND SCT SHRA OR TS PD VIS 10KMS LWRG TO 7KMS OR LESS IN LGT TO MOD PCPN LWRG FURTHER TO 5KMS TO 3KMS OR LESS IN MOD TO HVY PCPN OR THICK MRNG HZ PD SFC WNDS ELY TO SELY OVR NRN LUZON WHILE ELY TO NELY OVR THE REST OF THE FCST AREA AT 10KMH TO 20KMH W/ GUST OF UP TO 40KMH DURING TS PD"></textarea>
-
+            <label for="CIG " class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CIG </label>
+            <textarea id="CIG " rows="2" class="fbph block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="CIG 2760M/9200FT OCNLY LWRG TO 2370M/7900FT OR LESS IN ISOL SHRA AND TS LWRG TO 2010M/6700FT OR LESS IN LGT RA AND SCT SHRA OR TS PD VIS 10KMS LWRG TO 7KMS OR LESS IN LGT TO MOD PCPN LWRG FURTHER TO 5KMS TO 3KMS OR LESS IN MOD TO HVY PCPN OR THICK MRNG HZ PD SFC WNDS ELY TO SELY OVR NRN LUZON WHILE ELY TO NELY OVR THE REST OF THE FCST AREA AT 10KMH TO 20KMH W/ GUST OF UP TO 40KMH DURING TS PD"></textarea>
+            <!--pinasok ko yung button mo sa loob ng closing ng </form> dapat kasi nasa loob yung button mo ng form   -->
+            <button type="submit" class="pt-4 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">Preview</button>
+        </form>
+        
 {% endblock content %}        

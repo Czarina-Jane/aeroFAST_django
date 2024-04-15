@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}   
+<!-- TABS -->
+<div style="margin-left: 20px;" class="md:flex">
+    <ul class="flex-column space-y space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
+        <li>
+            <a href="{% url 'amf' %}" class="inline-flex items-center px-4 py-3 rounded-lg hover:text-gray-900 bg-gray-50 hover:bg-gray-100 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">Dashboard
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'fbph' %}" class="inline-flex items-center px-4 py-3 rounded-lg hover:text-gray-900 bg-gray-50 hover:bg-gray-100 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"> Airways and Terminal Forecast
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'taf' %}" class="inline-flex items-center px-4 py-3 rounded-lg hover:text-gray-900 bg-gray-50 hover:bg-gray-100 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">Terminal Aerodrome Forecast
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'sigmet' %}" class="inline-flex items-center px-4 py-3 rounded-lg hover:text-gray-900 bg-gray-50 hover:bg-gray-100 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">Significant Meteorological Information
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'others' %}" class="inline-flex items-center px-4 py-3 rounded-lg hover:text-gray-900 bg-gray-50 hover:bg-gray-100 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">Others
+            </a>
+        </li>
+
+    </ul>
+
+    <div class="max-w-xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <img class="rounded-t-lg" src="../../resources/sched.jpg" alt="" />
+    </div>
+        
+    <div style="margin-left: 20px;" class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Templates</h5>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><i>Word Templates for each Product and PDF sample for Airways and Terminal Forecast</i></p>
+                <a href="templates/AMSS-01_20240405_1100Z.docx" style="margin-bottom: 10px;" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-80">
+                AMSS-01
+                </a>
+                <a href="templates/AMSS-03_20240311_0500Z.docx" style="margin-bottom: 10px;" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-80">
+                    AMSS-03
+                </a>
+                <a href="templates/airways_20240101_am.pdf" style="margin-bottom: 10px;" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-80">
+                    AMSS-AIRWAYS AND TERMINAL FORECAST
+                </a>
+                <a href="templates/QR-AMSS-09_20240407_A02.docx" style="margin-bottom: 10px;" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-80">
+                    AMSS-SIGMET THUNDERSTORM
+                </a>
+                <a href="templates/QR-AMSS-06_20231217_1.docx" style="margin-bottom: 10px;" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-80">
+                    AMSS-SIGMET TROPICAL CYCLONE
+                </a>
+                <a href="templates/QR-AMSS-07_20240204_5.docx" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-80">
+                    AMSS-SIGMET VOLCANO
+                </a>
+            </div>
+    </div>
+
+    <div style="margin-left: 20px;" class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">        
+        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">Checklist</h5>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-center"><i>(On going development)</i></p>
+        </div>
+    </div>
+</div>   
+
+<div>
+
+</div>
+
+<div style="margin-right: 20px;" class="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">        
+
+    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">Announcements / Reminders / News / Events</h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-center"><i>(On going development)</i></p>
+    </div>
+</div> 
+{% endblock content %}

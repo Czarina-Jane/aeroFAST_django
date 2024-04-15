@@ -1,18 +1,4 @@
-<!-- preview.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preview</title>
-</head>
-<body>
-    <h1>Preview</h1>
-    <p>SYNOPTIC SITUATION: {{ SYN }}</p>
-    <p>PHIL AWYS: {{ PHILAWYS }}</p>
-</body>
-</html> -->
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,13 +53,13 @@
 
     <header style="margin-right: 50px;">
         <div style="margin-left: 20px; position: relative;" class="header">
-            <img src="resources/logo.png" alt="Logo" width="75" height="75">
+            <img src="{% static 'logo.png' %}" alt="Logo" width="75" height="75">
             <span style="position: absolute; top: 0; margin-left: 10px; font-size: 14px">Republic of the Philippines</span>
             <span style="position: absolute; top: 15px; margin-left: 10px; font-size: 14px"><strong>DEPARTMENT OF SCIENCE AND TECHNOLOGY</strong></span>
             <span style="position: absolute; top: 30px; margin-left: 10px; font-size: 14px"><strong>Philippine Atmospheric, Geophysical and Astronomical</strong></span>
             <span style="position: absolute; top: 45px; margin-left: 10px; font-size: 14px"><strong>Services Administation(PAGASA)</strong></span>
             <span style="position: absolute; top: 60px; margin-left: 10px; font-size: 14px">Weather Division</span>
-            <img src="resources/iso.jpg" alt="Logo" style="position: absolute; top: 0; right: 20px;" width="125" height="70">
+            <img src="{% static 'iso.jpg' %}" alt="Logo" style="position: absolute; top: 0; right: 20px;" width="125" height="70">
             <span style="position: absolute; top: 73px; right: 30px; font-size: 10px">AMSS-05 Rev.0/15-08-2023</span>
         </div>
 

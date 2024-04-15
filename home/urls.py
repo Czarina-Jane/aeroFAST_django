@@ -3,7 +3,8 @@ from .views import home, about, amf, amo, contact # Add home function from views
 
 urlpatterns = [    
     # Add path from local views
-    path('home/', home, name='home'), 
+    #change to '' so default page is homepage
+    path('', home, name='home'), 
     path('about/', about, name='about'), 
     path('amf/', amf, name='amf'), 
     path('amo/', amo, name='amo'),

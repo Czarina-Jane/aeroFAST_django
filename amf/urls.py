@@ -1,6 +1,4 @@
 from django.urls import path
-# pinalitan ko ng * para lahat pre ng nasa views.py mo macall mo dito
-
 from .views import * # Add home function from views
 
 urlpatterns = [    

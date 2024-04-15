@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, about, amf, amo, contact # Add home function from views
+from .views import *
 
 urlpatterns = [    
     # Add path from local views

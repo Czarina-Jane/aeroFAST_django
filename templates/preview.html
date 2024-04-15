@@ -1,4 +1,4 @@
-<!-- preview.html -->
+<!-- preview.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,4 +11,401 @@
     <p>SYNOPTIC SITUATION: {{ SYN }}</p>
     <p>PHIL AWYS: {{ PHILAWYS }}</p>
 </body>
-</html>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Airways and Terminal Forecast</title>
+    <style>
+        table {font-family: arial; color: black ; font-size: 8pt; text-align:
+     
+     justify}
+     h1 {font-weight: bold; color: "#ffffcc"; background-color:
+      
+     "#3f6c96"; font-size: 15pt; text-align: center}
+     
+     .title {font-weight: bold; color: darkblue}
+     
+     caption {font-weight: bold; color: darkblue; text-align: left; 
+     
+     background-color: blanchedalmond}
+     
+     .altcolor {background-color: blanchedalmond}
+     
+     .graphics {font-family: arial; color: black; font-size: 8pt; 
+     
+     text-align: center}
+     
+     
+     
+     @media print {
+     
+         #pdflink{display:none;}
+     
+         imgpdf {display:none;}
+     @page {
+             size: auto; 
+     margin: 05%;
+        }
+         }
+    </style>
+    <base target="_blank">
+    
+    <br>
+    
+    <br>
+    
+    <br>
+    
+    </head>
+    
+    
+    
+    <body style="margin-left: 30px; margin-right: -30px;" background="bg650_ivory.gif">
+
+    <header style="margin-right: 50px;">
+        <div style="margin-left: 20px; position: relative;" class="header">
+            <img src="resources/logo.png" alt="Logo" width="75" height="75">
+            <span style="position: absolute; top: 0; margin-left: 10px; font-size: 14px">Republic of the Philippines</span>
+            <span style="position: absolute; top: 15px; margin-left: 10px; font-size: 14px"><strong>DEPARTMENT OF SCIENCE AND TECHNOLOGY</strong></span>
+            <span style="position: absolute; top: 30px; margin-left: 10px; font-size: 14px"><strong>Philippine Atmospheric, Geophysical and Astronomical</strong></span>
+            <span style="position: absolute; top: 45px; margin-left: 10px; font-size: 14px"><strong>Services Administation(PAGASA)</strong></span>
+            <span style="position: absolute; top: 60px; margin-left: 10px; font-size: 14px">Weather Division</span>
+            <img src="resources/iso.jpg" alt="Logo" style="position: absolute; top: 0; right: 20px;" width="125" height="70">
+            <span style="position: absolute; top: 73px; right: 30px; font-size: 10px">AMSS-05 Rev.0/15-08-2023</span>
+        </div>
+
+
+        
+    </header>
+    
+    <table border="0" cellpadding="0" cellspacing="0" width="95%" valign="top">
+    
+     
+    
+    <tr>
+    <td height="20">
+    </tr>
+    
+     
+    <tr>
+        
+    <td width="20">
+       
+    
+     <td>
+    <table width="95%" cellpadding="0" cellspacing="0">
+    
+           
+     <tr>
+            
+     <td colspan="2">
+    
+    <h1>AIRWAYS AND TERMINAL FORECAST </h1>
+          
+     </tr>
+    
+      
+      
+       <tr>
+             <td height="0">
+       
+        </tr>
+    
+    
+    <tr><td>
+    
+    
+    
+    <table width="95%">
+    
+    
+    
+    <tr><td>
+    
+    <!-----------------------START DATE----------------------->
+    
+    <div id="current-date"></div> 
+    
+    <!------------REVISION FOR CORRECTION--------------------> 
+    
+    
+    <!-----------------------END OF DATE---------------------->
+    
+    
+    <br></tr>
+    
+    
+    <tr><td><b>FBPH:</b> &nbsp;  
+    
+    
+    <!----------------------START TIME------------------------>
+    
+    081800Z
+    
+    </tr>
+    <tr><td>
+    
+    <b>AWYS AND TRML FCST VALID  BEGINNING :</b> &nbsp;
+    
+    
+    <!-------------------------START TIME--------------------->
+    
+    090800H UNTIL 100800H
+    
+    
+    <!------------------------END VALIDITY--------------------->
+    </table>
+    </tr>
+    
+    <tr>
+    
+    <td height="20"></tr>
+    
+    
+    <tr><td><b>SYN SITUATION:</tr>
+    
+    
+    <tr><td width="70%">
+         
+    <!---------------------------START SYNOPSIS---------------------->
+       
+    {{SYN}}
+    
+    <!---------------------------END SYNOPSIS------------------------->
+    </tr>
+    
+    <tr><td height="20"></tr>
+    
+    <tr><td><b>PHIL AWYS:</tr>
+    
+    
+    <tr><td width="70%">
+    
+    <!---------------------------START FORECAST---------------------------->
+    
+    
+    {{PHILAWYS}}
+    
+    <!---------------------------END FORECAST----------------------------->
+    
+    </tr>
+    
+    
+    <tr><td height="20"></tr>
+    
+    <tr><td>
+    
+    <table border="1" bordercolor="YELLOW" width="100%" 
+    
+    cellspacing="2" cellpadding="10">
+    
+    <caption>WINDS ALOFT: (All speed in KT/KMH)</caption>
+    
+    <tr>
+    
+    <td width="115" align="right">3000M/10000FT:
+    
+    <td width="400">
+    
+    <!-------------------START 3000M/10000FT WINDS ALOFT ------------->
+    
+    {{FB100}}
+    
+    <!-----------------END 3000M/10000FT WINDS ALOFT------------>
+    
+    </tr>
+    <td align="right">5400M/18000FT:
+    <td width="400">
+    
+    <!-----------------START 5400M/18000FT  WINDS ALOFT--------------->
+    
+    {{FB180}}
+    
+    <!-----------------END 5400M/18000FT  WINDS ALOFT---------------->
+    
+    </tr>
+    <td align="right">9000M/30000FT:
+    <td width="400">
+    
+    <!-----------------START 9000M/30000FT WINDS ALOFT----------------->
+    
+    {{FB300}}
+    
+    <!-----------------END 9000M/30000FT WINDS ALOFT------------------>
+    
+    </tr>
+    
+    <tr>
+    <td align="right"> 11700M/39000FT:
+    <td width="400">
+    
+    <!-------------START 11700M/39000FT WINDS ALOFT------------------->
+    
+    {{FB390}}
+    
+    <!--------------END  11700M/39000FT WINDS ALOFT ------------------>
+     
+    </table>        
+        
+    </tr> 
+      <tr><td height="20">
+    
+    </tr>
+    <tr><td>
+    
+    <table border="1" bordercolor="blanchedalmond" cellspacing="2" 
+    
+    cellpadding="3">
+    
+    <caption><center>
+      
+    <!---------------------START GRAPHICS VALIDITY--------------------->
+    
+    
+    MULTI-LEVEL 30-HR PROG CHARTS VALID UNTIL 0000UTC 10 APRIL 2024
+    
+    
+    <!------------------------END GRAPHICS VALIDITY-------------------->
+     
+    <br><font size="1">(Courtesy of WAFC-Washington)</font> 
+    </center></caption>
+    
+    <tr valign="top" align="center" width="570">
+    
+    <td width="18%" class="graphics">
+    
+    <a href="PWGG70.gif" target="blank">
+    
+    <img src="700wind.gif" alt="700 Wind" border=0 width=110 height=140></a><br>
+    
+    700hPa Prog Chart 
+    
+    <td width="18%" class="graphics">
+    
+    <a href="PWGG50.gif" target="blank">
+    
+    <img src="500wind.gif" alt="500 Wind" border=0 width=110 height=140></a><br>
+    
+    500hPa Prog Chart 
+    
+    <td width="18%" class="graphics">
+    
+    <a href="PWGG30.gif" target="blank">
+    
+    <img src="300wind.gif" alt="300 Wind" border=0 width=110 height=140></a><br>
+    
+    300hPa Prog Chart 
+    
+    
+    <td width="18%" class="graphics">
+    
+    <a href="PWGG20.gif" target="blank">
+    
+    <img src="200wind.gif" alt="200 Wind" border=0 width=110 height=140></a><br>
+    
+    200hPa Prog Chart 
+     
+    </tr>
+    
+    </table>
+    
+    </tr>
+      
+    <tr><td height="20"></tr>
+    
+    <tr><td width="70%">
+    
+    <!-------------------------START STATION FORECAST------------------>
+    
+    RPUO RPLI RPLW RPUQ RPUT RPUA RPLB RPLC RPLJ RPLL RPLN RPLP RPLS RPLQ RPLU
+    RPLV&nbsp; RPLW RPLX RPLY RPLZ RPUA RPUB RPUC RPUD RPUE RPUF RPUG RPUH 
+    RPUI RPUJ RPUK RPUL&nbsp; RPUM RPUN RPUP RPUR RPUS RPUU RPUV RPUW RPU X 
+    RPUY RPVA RPVB RPVC RPVD&nbsp; RPVE RPVF RPVG RPVH RPVI RPVJ RPVK RPVL 
+    RPVM RPVN RPVO RPVP RPVR RPVS RPVT RPVU&nbsp; RPVV RPMA RPMB RPMC RPMD 
+    RPME RPMF RPMG RPMH RPMI RPMJ RPMK RPML RPMN RPMO&nbsp; RPMP RPMQ RPMR 
+    RPMS RPMT RPMW RPMY RPMZ TRMLS : {{CIG}}
+    
+    <!----------------------------END STATION FORECAST----------------->
+    
+    <br><br></tr>
+    
+    <tr><td><b> </b> &nbsp;   
+    
+    </tr>
+    <tr><td>Prepared/Checked By:          </b> &nbsp;
+     
+    <!-----------------START FORECASTERS INITIALS-------------->
+    
+     MPT / JEMB
+    
+    <!-----------------END FORECASTERS INITIALS----------------->
+    
+    <span style="float:right">Encoded/Checked By:      
+    
+    <!-----------------START ENCODERS INITIALS--------------->
+    
+     PFP / MPT
+    
+    <!-----------------END ENCODERS INITIALS----------------->
+    
+    </span>
+    
+    </tr>
+    
+    <tr><td height="20"></tr>
+    
+    </table>
+    
+    <br>
+    <br>
+    <br>
+
+    <div>
+        <p style="margin-bottom: -10px;" >"tracking the sky...helping the country"</p>
+        <div style="display: flex; justify-content: space-between;">
+            <p style="margin-right: auto;">Rm.415, 4th Floor, IPT Bldg., NAIA Terminal 1, Pasay City</p>
+            <p>Tel. Nos. (632) 8852 2927</p>
+            <p style="margin-left: auto; margin-right: 30px;">www.bagong.pagasa.dost.gov.ph</p>
+        </div>
+    </div>
+
+   
+   <script>
+        // Function to get the current date in the format "Month DD, YYYY"
+        function getCurrentDate() {
+        const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        const currentDate = new Date();
+        const month = months[currentDate.getMonth()];
+        const day = currentDate.getDate();
+        const year = currentDate.getFullYear();
+        return month.toUpperCase() + ' ' + (day < 10 ? '0' : '') + day + ', ' + year + ' ' + 'Rev.0';
+        }
+    
+        // Set the innerHTML of the element with the id "current-date" to the current date
+        document.getElementById('current-date').innerHTML = getCurrentDate();
+    </script>
+    </body>
+    </html>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

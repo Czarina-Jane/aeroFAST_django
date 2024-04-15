@@ -1,6 +1,5 @@
 {% extends 'amf/base_amf.html' %}
-{% block content %}    
-
+{% block content_amf %}    
     <div class="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">
       <!-- nag add ako ng <form> pra matransfer mo yung data ng form na ito to another form  -->
         <form method="post" action="{% url 'fbph' %}">
@@ -66,6 +65,5 @@
             <textarea name="CIG" rows="2" class="fbph block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="CIG 2760M/9200FT OCNLY LWRG TO 2370M/7900FT OR LESS IN ISOL SHRA AND TS LWRG TO 2010M/6700FT OR LESS IN LGT RA AND SCT SHRA OR TS PD VIS 10KMS LWRG TO 7KMS OR LESS IN LGT TO MOD PCPN LWRG FURTHER TO 5KMS TO 3KMS OR LESS IN MOD TO HVY PCPN OR THICK MRNG HZ PD SFC WNDS ELY TO SELY OVR NRN LUZON WHILE ELY TO NELY OVR THE REST OF THE FCST AREA AT 10KMH TO 20KMH W/ GUST OF UP TO 40KMH DURING TS PD"></textarea>
             <!--pinasok ko yung button mo sa loob ng closing ng </form> dapat kasi nasa loob yung button mo ng form   -->
             <button type="submit" class="pt-4 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">Preview</button>
-        </form>
-        
-{% endblock content %}        
+        </form> 
+{% endblock content_amf %}        

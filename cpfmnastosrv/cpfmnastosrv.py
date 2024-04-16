@@ -5,7 +5,7 @@ import os
 nas_username = 'amss-nas'
 nas_password = 'Amss123!@#'
 nas_local_dir = '/mnt/nas'
-nas_remote_path = '10.10.1.250/AMSS_File/PUTTY/web'
+nas_remote_path = '//10.10.1.250/AMSS_File/PUTTY/web'
 
 def mount_network_server(nas_remote_path, nas_local_dir):
     # Check if the directory is already mounted

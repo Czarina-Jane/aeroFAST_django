@@ -4,7 +4,11 @@
     <div style="margin: 0 20px;" class="block full-w-screen-xl p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
         <div style="margin-left: 20px;"><h2 class="text-1xl font-extrabold dark:text-white">TAF Analyst</h2><span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">Yellow</span> <a>Errors</a> </div>
         <br>
-        <div style="margin-left: 20px; max-height: 200px; overflow:auto;"><pre id="fileContents"></pre></div> 
+        <div style="margin-left: 20px; max-height: 200px; overflow:auto;">    
+        {% for line in txt_content %}
+            {{ line|safe }}
+        {% endfor %}
+    </div> 
     </div>
     <br>
     <!-- DISPLAY TAF ERRORS -->

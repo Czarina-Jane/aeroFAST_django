@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 def home(request):
     with open('taf_analyst/output.txt', 'r') as file:
-        txt_content = file.readlines()
+        txt_content = file.read()
     return render(request, 'home.html', {'txt_content': txt_content})
 
 def about(request):
